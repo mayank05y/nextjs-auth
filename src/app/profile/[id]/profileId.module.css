@@ -1,0 +1,32 @@
+.profileIdPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+  }
+  
+  .profileIdCard {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    padding: 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    color: var(--foreground);
+  }
+
+  .detailsBox {
+    color: lightgrey;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .backLink {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+  }
