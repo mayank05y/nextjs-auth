@@ -10,7 +10,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
             return NextResponse.json({ error: "User not found" }, { status: 404 });
         }
         return NextResponse.json({ user });
-    } catch (error) {
-        return NextResponse.json({ error: "Error fetching user details" }, { status: 500 });
+    } catch (error: any) {
+        console.error("Error in GET /api/users/[id]:", error);
+        return NextResponse.json({ error: error.message || "Error fetching user details" }, { status: 500 });
     }
 }

@@ -28,8 +28,9 @@ export default function ProfilePage() {
             const response = await axios.get("/api/users/me");
             setUserDetails(response.data.user);
             setShowDetails(true);
-        } catch (error) {
-            toast.error("Failed to fetch user details");
+        } catch (error: any) {
+            console.error("Error fetching current user:", error);
+            toast.error(error.response?.data?.error || error.message || "Failed to fetch user details");
             setUserDetails(null);
             setShowDetails(false);
         }

@@ -9,8 +9,8 @@ export default async function UserProfile({ params }: any) {
     try {
         const response = await axios.get(`${process.env.DOMAIN}/api/users/${userId}`);
         userDetails = response.data.user;
-    } catch (error) {
-        // handle error or show not found
+    } catch (error: any) {
+        console.error("Error fetching user details:", error);
     }
 
     return (

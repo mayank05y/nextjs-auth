@@ -20,7 +20,8 @@ export default function ForgotPasswordPage() {
             await axios.post("/api/users/forgotpassword", { email });
             setSuccess("Reset link sent to your email");
         } catch (error: any) {
-            setError("An error occurred. Please try again.");
+            console.error("Error in forgot password request:", error);
+            setError(error.response?.data?.error || "An error occurred. Please try again.");
         }
         setLoading(false);
     }
